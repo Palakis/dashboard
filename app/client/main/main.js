@@ -18,6 +18,22 @@
 	webview.setAttribute('allowpopups', 'true');
 	document.body.appendChild(webview);
 
+	const minimizeBtn = document.getElementById('minimize-btn');
+	const maximizeBtn = document.getElementById('maximize-btn');
+	const closeBtn = document.getElementById("close-btn");
+
+	minimizeBtn.addEventListener('click', () => {
+		ipcRenderer.send('window-minimize');
+	});
+
+	maximizeBtn.addEventListener('click', () => {
+		ipcRenderer.send('window-maximize');
+	});
+
+	closeBtn.addEventListener('click', () => {
+		ipcRenderer.send('window-close');
+	});
+
 	ipcRenderer.send('loadMostRecentUrl');
 
 	const showSplashTimeout = setTimeout(() => {

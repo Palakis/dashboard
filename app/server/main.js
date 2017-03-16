@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 const {version} = require('./util');
 const windowStateKeeper = require('electron-window-state');
 
@@ -30,12 +30,24 @@ app.on('ready', () => {
 		minHeight: 375,
 		useContentSize: true,
 		resizable: true,
-		frame: true,
+		frame: false,
 		title: `NodeCG Dashboard v${version}`
 	});
 
 	// Quit when main window is closed.
 	mainWindow.on('closed', () => app.quit());
+
+	ipcMain.on('window-minimize', (event, arg) => {
+		mainWindow.minimize();
+	});
+
+	ipcMain.on('window-maximize', (event, arg) => {
+		mainWindow.maximize();
+	});
+
+	ipcMain.on('window-close', (event, arg) => {
+		mainWindow.close();
+	});
 
 	// Spin up the menu lib
 	require('./menu')(mainWindow);

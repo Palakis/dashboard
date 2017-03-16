@@ -8,6 +8,51 @@ body {
 	background-color: #eee;
 }
 
+#draggable-region {
+	-webkit-app-region: drag;
+	width: 100%;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin-top: 2px;
+	height: 17px;
+	width: 100%;
+
+	display: hidden;
+}
+
+#window-buttons {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+
+	text-align: right;
+	width: 55px;
+	height: 10px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.round-btn {
+	border-radius: 50%;
+	width: 13px;
+	height: 13px;
+}
+
+#minimize-btn {
+	background-color: yellow;
+}
+
+#maximize-btn {
+	background-color: lime;
+}
+
+#close-btn {
+	background-color: red;
+}
+
 #splash {
 	margin: 0;
 }
