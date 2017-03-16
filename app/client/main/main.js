@@ -18,9 +18,14 @@
 	webview.setAttribute('allowpopups', 'true');
 	document.body.appendChild(webview);
 
+	//const loadBtn = document.getElementById('load-btn');
 	const minimizeBtn = document.getElementById('minimize-btn');
 	const maximizeBtn = document.getElementById('maximize-btn');
 	const closeBtn = document.getElementById("close-btn");
+
+	/*loadBtn.addEventListener('click', () => {
+
+	});*/
 
 	minimizeBtn.addEventListener('click', () => {
 		ipcRenderer.send('window-minimize');
