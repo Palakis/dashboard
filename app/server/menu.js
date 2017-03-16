@@ -324,7 +324,9 @@ function regenerateMenu() {
 	}
 
 	const menu = Menu.buildFromTemplate(template);
-	Menu.setApplicationMenu(menu);
+	ipcMain.on('open-menu', (event, arg) => {
+		menu.popup(mainWindow);
+	});
 }
 
 function sortRecentUrls() {

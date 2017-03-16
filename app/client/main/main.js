@@ -7,25 +7,14 @@
 	const openingUrl = document.getElementById('opening-url');
 	const webview = document.createElement('webview');
 
-	let revealTimeout;
-	webview.addEventListener('dom-ready', () => {
-		clearTimeout(revealTimeout);
-		revealTimeout = setTimeout(() => {
-			opening.classList.add('hidden');
-			webview.style.opacity = 1;
-		}, 500);
-	});
-	webview.setAttribute('allowpopups', 'true');
-	document.body.appendChild(webview);
-
-	//const loadBtn = document.getElementById('load-btn');
+	const loadBtn = document.getElementById('load-btn');
 	const minimizeBtn = document.getElementById('minimize-btn');
 	const maximizeBtn = document.getElementById('maximize-btn');
 	const closeBtn = document.getElementById("close-btn");
 
-	/*loadBtn.addEventListener('click', () => {
-
-	});*/
+	loadBtn.addEventListener('click', () => {
+		ipcRenderer.send('open-menu');
+	});
 
 	minimizeBtn.addEventListener('click', () => {
 		ipcRenderer.send('window-minimize');
@@ -38,6 +27,17 @@
 	closeBtn.addEventListener('click', () => {
 		ipcRenderer.send('window-close');
 	});
+
+	let revealTimeout;
+	webview.addEventListener('dom-ready', () => {
+		clearTimeout(revealTimeout);
+		revealTimeout = setTimeout(() => {
+			opening.classList.add('hidden');
+			webview.style.opacity = 1;
+		}, 500);
+	});
+	webview.setAttribute('allowpopups', 'true');
+	document.body.appendChild(webview);
 
 	ipcRenderer.send('loadMostRecentUrl');
 

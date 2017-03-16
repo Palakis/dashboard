@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const {app, BrowserWindow, ipcMain} = require('electron');
+const {app, BrowserWindow, ipcMain, Menu, MenuItem} = require('electron');
 const {version} = require('./util');
 const windowStateKeeper = require('electron-window-state');
 
@@ -42,7 +42,10 @@ app.on('ready', () => {
 	});
 
 	ipcMain.on('window-maximize', (event, arg) => {
-		mainWindow.maximize();
+		if(mainWindow.isMaximized())
+			mainWindow.unmaximize();
+		else
+			mainWindow.maximize();
 	});
 
 	ipcMain.on('window-close', (event, arg) => {
