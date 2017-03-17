@@ -63,15 +63,15 @@ body {
 }
 
 #minimize-btn {
-	background-color: yellow;
+	background: radial-gradient(circle 15px at 6px 4px, #f6e652, #f6bd20);
 }
 
 #maximize-btn {
-	background-color: lime;
+	background: radial-gradient(circle 15px at 6px 4px, #EADE2E, #39CA5F);
 }
 
 #close-btn {
-	background-color: red;
+	background: radial-gradient(circle 13px at 6px 4px, #ff612f, #de5239);
 }
 
 #splash {
