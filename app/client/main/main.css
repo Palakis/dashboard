@@ -26,7 +26,6 @@ body {
 	top: 15px;
 	right: 15px;
 
-	text-align: right;
 	width: 110px;
 	height: 20px;
 
@@ -48,6 +47,20 @@ body {
 	margin-right: 3px;
 }
 
+.round-btn .fa {
+	display: block;
+	text-align: center;
+	opacity: 0;
+	color: #222;
+	transition: opacity 0.2s;
+}
+
+#window-buttons:hover .fa
+{
+	opacity: 1;
+	transition: opacity 0.2s;
+}
+
 #load-btn {
 	user-select: none;
 	width: 38px;
@@ -66,12 +79,27 @@ body {
 	background: radial-gradient(circle 15px at 6px 4px, #f6e652, #f6bd20);
 }
 
+#minimize-btn .fa {
+	font-size: 6px;
+	margin-top: 3px;
+}
+
 #maximize-btn {
 	background: radial-gradient(circle 15px at 6px 4px, #EADE2E, #39CA5F);
 }
 
+#maximize-btn .fa {
+	font-size: 6px;
+	margin-top: 3px;
+}
+
 #close-btn {
 	background: radial-gradient(circle 13px at 6px 4px, #ff612f, #de5239);
+}
+
+#close-btn .fa {
+	font-size: 8px;
+	margin-top: 2px;
 }
 
 #splash {
