@@ -6,7 +6,7 @@ No releases available currently, although it's pretty easy to build an ASAR pack
 
 ## Credits
 Developed by [Alex Van Camp](https://twitter.com/vancamp)  
-Designed by [Chris Hanel](https://twitter.com/chrishanel)
+Designed by [Chris Hanel](https://twitter.com/chrishanel)  
 Frameless mod by [Stéphane Lepin](https://github.com/Palakis)
 
 ## License
